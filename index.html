@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>Daylight — Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#today" aria-label="Daylight home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>daylight<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="nav-label">YOUR SPACE</div>
+      <nav class="main-nav">
+        <a class="nav-item active" href="#today"><span class="nav-icon">◷</span> Today <span class="nav-count" id="navCount">3</span></a>
+        <a class="nav-item" href="#habits"><span class="nav-icon">▤</span> My habits</a>
+        <a class="nav-item" href="#progress"><span class="nav-icon">▥</span> Progress</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <div class="note-sun">☀</div>
+          <p>Small steps add up.<br><strong>Keep showing up.</strong></p>
+          <div class="note-stars" aria-hidden="true">✳ &nbsp; ✦ &nbsp; ·</div>
+        </div>
+        <button class="profile-button" type="button" aria-label="Profile">
+          <span class="avatar">K</span>
+          <span class="profile-copy"><strong>Your space</strong><small>Personal tracker</small></span>
+          <span class="profile-more">···</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="today">
+      <header class="topbar">
+        <div class="breadcrumb"><span>My space</span><span class="crumb-slash">/</span><strong>Today</strong></div>
+        <div class="topbar-actions">
+          <span class="today-pill"><span class="live-dot"></span> YOUR DAILY CHECK-IN</span>
+          <button class="icon-button" type="button" aria-label="More options">···</button>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="greeting-row">
+          <div>
+            <div class="eyebrow" id="dateLabel">MONDAY, OCTOBER 5</div>
+            <h1>A little progress<br><span>goes a long way.</span></h1>
+            <p class="greeting-subtitle">Show up for yourself, one small thing at a time.</p>
+          </div>
+          <div class="sun-illustration" aria-hidden="true"><span class="sun-ray ray-one"></span><span class="sun-ray ray-two"></span><span class="sun-ray ray-three"></span><span class="sun-ray ray-four"></span><span class="sun-core">✳</span><span class="sun-speck speck-one">·</span><span class="sun-speck speck-two">✦</span></div>
+        </section>
+
+        <section class="summary-grid" aria-label="Today's summary">
+          <article class="summary-card progress-card">
+            <div class="summary-icon lilac">◒</div>
+            <div class="summary-info"><span class="summary-label">TODAY'S PROGRESS</span><strong><span id="progressCount">3</span><small> / <span id="progressTotal">5</span> habits</small></strong></div>
+            <div class="ring" id="progressRing" aria-label="60 percent complete"><div class="ring-inner"><strong id="progressPercent">60%</strong><small>done</small></div></div>
+          </article>
+          <article class="summary-card streak-card">
+            <div class="summary-icon peach">↗</div>
+            <div class="summary-info"><span class="summary-label">CURRENT STREAK</span><strong>4 <small>days</small></strong><p>You're finding your rhythm</p></div>
+            <div class="flame">✦<small>✦</small></div>
+          </article>
+        </section>
+
+        <section class="habits-section" id="habits">
+          <div class="section-heading">
+            <div><div class="section-title-row"><h2>Today's habits</h2><span class="habit-total" id="habitTotal">5</span></div><p>A few good things, just for you.</p></div>
+            <button class="add-button" id="addHabitButton" type="button"><span>＋</span> Add a habit</button>
+          </div>
+
+          <div class="habit-list" id="habitList">
+            <article class="habit-row completed" data-habit="water">
+              <button class="check-button" type="button" aria-label="Mark Drink water incomplete" aria-pressed="true"><span>✓</span></button>
+              <div class="habit-emoji water">💧</div><div class="habit-copy"><strong>Drink water</strong><span>8 glasses to feel your best</span></div>
+              <span class="habit-time">☼ <span>Morning</span></span><span class="habit-streak">✦ 4 day streak</span><button class="row-menu" type="button" aria-label="More options for Drink water">···</button>
+            </article>
+            <article class="habit-row completed" data-habit="reading">
+              <button class="check-button" type="button" aria-label="Mark Read 10 pages incomplete" aria-pressed="true"><span>✓</span></button>
+              <div class="habit-emoji reading">📖</div><div class="habit-copy"><strong>Read 10 pages</strong><span>A little reading, a lot of calm</span></div>
+              <span class="habit-time">☼ <span>Morning</span></span><span class="habit-streak">✦ 2 day streak</span><button class="row-menu" type="button" aria-label="More options for Read 10 pages">···</button>
+            </article>
+            <article class="habit-row completed" data-habit="stretch">
+              <button class="check-button" type="button" aria-label="Mark Morning stretch incomplete" aria-pressed="true"><span>✓</span></button>
+              <div class="habit-emoji stretch">🧘</div><div class="habit-copy"><strong>Morning stretch</strong><span>Give your body a gentle hello</span></div>
+              <span class="habit-time">☼ <span>Morning</span></span><span class="habit-streak">✦ 6 day streak</span><button class="row-menu" type="button" aria-label="More options for Morning stretch">···</button>
+            </article>
+            <article class="habit-row" data-habit="walk">
+              <button class="check-button" type="button" aria-label="Mark Take a short walk complete" aria-pressed="false"><span>✓</span></button>
+              <div class="habit-emoji walk">🌱</div><div class="habit-copy"><strong>Take a short walk</strong><span>Fresh air counts as self-care</span></div>
+              <span class="habit-time">◷ <span>Afternoon</span></span><span class="habit-streak muted-streak">✦ 3 day streak</span><button class="row-menu" type="button" aria-label="More options for Take a short walk">···</button>
+            </article>
+            <article class="habit-row" data-habit="journal">
+              <button class="check-button" type="button" aria-label="Mark Journal for 5 minutes complete" aria-pressed="false"><span>✓</span></button>
+              <div class="habit-emoji journal">✍️</div><div class="habit-copy"><strong>Journal for 5 minutes</strong><span>Let your thoughts find a page</span></div>
+              <span class="habit-time">☾ <span>Evening</span></span><span class="habit-streak muted-streak">✦ Start today</span><button class="row-menu" type="button" aria-label="More options for Journal for 5 minutes">···</button>
+            </article>
+          </div>
+          <form class="habit-form" id="habitForm" hidden>
+            <label for="habitName">Habit name</label>
+            <input id="habitName" name="name" maxlength="50" placeholder="e.g. Study Python" required>
+            <label for="habitDescription">A little note <span>(optional)</span></label>
+            <input id="habitDescription" name="description" maxlength="80" placeholder="What will this help you do?">
+            <div class="habit-form-actions"><button class="cancel-button" id="cancelHabitButton" type="button">Cancel</button><button class="save-button" type="submit">Save habit</button></div>
+          </form>
+          <div class="encouragement" id="encouragement"><span class="encouragement-mark">✦</span><span>You're off to a lovely start. <strong>Two more and you're there!</strong></span><span class="encouragement-flower">✿</span></div>
+        </section>
+
+        <section class="week-section" id="progress">
+          <div class="week-heading"><div><h2>This week, so far</h2><p>Consistency over perfection.</p></div><a href="#progress" class="view-link">View progress <span>↗</span></a></div>
+          <div class="week-card">
+            <div class="week-chart" aria-label="Weekly habit completions">
+              <div class="chart-y-labels"><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span></div>
+              <div class="chart-area"><div class="chart-gridlines"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="chart-columns">
+                <div class="day-column"><div class="bar-set"><i class="bar bar-sage" style="height:45%"></i><i class="bar bar-lilac" style="height:28%"></i></div><span>Mon</span></div>
+                <div class="day-column"><div class="bar-set"><i class="bar bar-sage" style="height:61%"></i><i class="bar bar-lilac" style="height:39%"></i></div><span>Tue</span></div>
+                <div class="day-column"><div class="bar-set"><i class="bar bar-sage" style="height:53%"></i><i class="bar bar-lilac" style="height:34%"></i></div><span>Wed</span></div>
+                <div class="day-column"><div class="bar-set"><i class="bar bar-sage" style="height:72%"></i><i class="bar bar-lilac" style="height:48%"></i></div><span>Thu</span></div>
+                <div class="day-column active-day"><div class="bar-set"><i class="bar bar-sage" style="height:60%"></i><i class="bar bar-lilac" style="height:38%"></i></div><span>Fri</span></div>
+                <div class="day-column future-day"><div class="bar-set"></div><span>Sat</span></div>
+                <div class="day-column future-day"><div class="bar-set"></div><span>Sun</span></div>
+              </div></div>
+            </div>
+            <div class="week-divider"></div>
+            <div class="week-legend"><span><i class="legend-dot sage-dot"></i>Completed</span><span><i class="legend-dot lilac-dot"></i>Remaining</span></div>
+            <div class="week-insight"><span class="insight-icon">✳</span><span>You've completed <strong>18 habits</strong> this week.<br><small>That's 3 more than last week. Nice work!</small></span></div>
+          </div>
+        </section>
+        <footer>Made for the little things that make a big difference <span>✿</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
